@@ -1,0 +1,13 @@
+<%@ page language="java" contentType="text/html"%>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div>
+<img alt="no data" src="websiteimage.jpg"  width="5%"  height="5%">
+<h2 style="color: red" >Login Successful</h2>
+<jsp:include page="index.html"></jsp:include>
+</div>
+</body>
+</html>

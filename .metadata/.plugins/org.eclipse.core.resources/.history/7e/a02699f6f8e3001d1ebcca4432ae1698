@@ -1,0 +1,66 @@
+package com.sai.advanceapplication.registration;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import com.sai.advanceapplication.resetpassword.ResetPassword;
+
+public class UserDAO {
+
+	public static int saveData(UserData user) {
+
+		int result = 0;
+		try {
+			Connection connection = TestConnection.createConnection();
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("insert into user_details values(?,?,?,?,?,?,?,?,?)");
+
+			preparedStatement.setString(1, user.getUsername());
+			preparedStatement.setString(2, user.getPassword());
+			preparedStatement.setString(3, user.getEmail());
+			preparedStatement.setString(4, user.getCountry());
+			preparedStatement.setString(5, user.getQualification());
+			preparedStatement.setString(6, user.getGender());
+			preparedStatement.setString(7, user.getTechnologies());
+			preparedStatement.setString(8, user.getAddress());
+			preparedStatement.setString(9, user.getComments());
+			result = preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+
+	public static int updateData(ResetPassword details) {
+		int res = 0;
+		try {
+			Connection connection = TestConnection.createConnection();
+			PreparedStatement preparedStatement = connection
+					.prepareStatement("update user_details set password=? where email=?");
+			preparedStatement.setString(1, details.getPassword());
+			preparedStatement.setString(2, details.getEmail());
+			res = preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return res;
+	}
+
+	public static String checkLogin(String email) {
+		
+		try {
+			Connection connection = TestConnection.createConnection();
+			Statement statement = connection.createStatement();
+		ResultSet set = statement.executeQuery("select password from user_details where email='" + email + "'");
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+}

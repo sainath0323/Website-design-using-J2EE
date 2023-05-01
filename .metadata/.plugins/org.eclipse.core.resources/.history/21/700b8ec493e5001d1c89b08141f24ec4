@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<form method="get" action="DeleteServlet">
+Enter Your User Name <input type="text"   name="user"  placeholder="Enter user name"/>
+Enter Email<input type="text"  name="email" placeholder="Enter Email"/>
+<input type="submit"  value="Delete"/>
+</form>
+</body>
+</html>

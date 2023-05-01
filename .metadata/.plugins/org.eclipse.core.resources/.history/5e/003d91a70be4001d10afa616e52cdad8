@@ -1,0 +1,12 @@
+<%@ page language="java" contentType="text/html"%>
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<div style="background-color: darkblue; margin-top: 5px ">
+<h2 style="text-align: center; " >Login Successful</h2>
+<jsp:include page="index.html"></jsp:include>
+</div>
+</body>
+</html>

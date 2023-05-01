@@ -1,0 +1,7 @@
+package com.sai.advanceapplication.viewusers;
+
+public class View {
+
+private String	username,email,country,qualification,gender,address;
+	
+}

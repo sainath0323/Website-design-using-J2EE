@@ -1,0 +1,37 @@
+package com.sai.advanceapplication.viewusers;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.sai.advanceapplication.registration.TestConnection;
+
+
+@WebServlet("/ViewServlet")
+public class ViewServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		
+	
+	try {
+		Connection connection=	TestConnection.createConnection();
+		Statement statement=connection.createStatement();
+	ResultSet  set=	statement.executeQuery("select username,email,country,qualification,gender,address from user_details");
+		
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+		
+	}
+
+}

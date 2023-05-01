@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form method="get" action="DeleteServlet">
+Enter Your User Name <input type="text"   name="user"  placeholder="Enter user name"/>
+Enter Email<input type="text"  name="email" placeholder="Enter Email"/>
+<input type="submit"  value="Delete"/>
+</form>
+</body>
+</html>
